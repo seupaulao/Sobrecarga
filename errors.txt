@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 64: Say menuitems and captions may not exist in the same menu.
+    c "Parece que a gangue do norte entrou em confronto aqui com o sul de novo..."
+                                                                                  ^
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Sun Oct 18 10:42:37 2020
