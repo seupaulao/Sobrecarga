@@ -186,8 +186,8 @@ label lixao_02_F:
    jump lixao_03_B
 
 label i_lixao_03_A:
-   call zerar_lixao_03_A from _call_zerar_lixao_03_A
-   call lixao_03_A from _call_lixao_03_A
+   call zerar_lixao_03_A
+   call lixao_03_A
    if meta <= 0: 
       "Trabalho Concluído! "
       "Celulas de combustiveis encontrados : [celulas]"

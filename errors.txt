@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 64: Say menuitems and captions may not exist in the same menu.
-    c "Parece que a gangue do norte entrou em confronto aqui com o sul de novo..."
-                                                                                  ^
+File "game/script.rpy", line 208: expected statement.
+    energia = 0
+            ^
+
+File "game/script.rpy", line 209: expected statement.
+    nivelPrensa = 0
+                ^
+
+File "game/script.rpy", line 210: expected statement.
+    scanner = 0
+            ^
+
+File "game/script.rpy", line 211: expected statement.
+    cavar = 0
+          ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Oct 18 10:42:37 2020
+Wed Oct 21 18:58:45 2020
