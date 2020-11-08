@@ -39,6 +39,7 @@ label start:
 
    # jump i_lixao_03_A
 
+label prologo:
     n "Zarkan a cidade comum."
     n "Quando TombCity, a antiga capital, ergueu-se da última vez contra todas as outras cidades"
     n "Homem e máquina já avançavam juntos, a robótica trouxe aprimoramentos, e os aprimoramentos trouxeram a ganância"
@@ -49,7 +50,7 @@ label start:
     n "O Clero e os nobres se reuniram e decidiram formam um novo governo, um governo justo, um governo comum"
     n "Nasce a grande cidade de Zarkan."
 
-label prologo:
+label a_perda:
     n "Zarkan a cidade da tecnologia e da divisão"
     n "Robôs e Homens, desde a guerra, dentro de Zarkan, tornaram-se aliados"
     n "Não mais existia a servidão dos robôs, então os velhos hábitos do poderio voltaram: a servidão dos homens"
@@ -317,8 +318,38 @@ label lixao_03_B_2:
           "Precisa repor o seu plasma"
           n "Ela muda sua feição, e aceita o plasma"  
           jump lixao_03_B_3
+
 label lixao_03_B_3:
    n "A garota permite que [playerName] auxilie-a na aplicação do plasma "
+   menu:
+      g "Realmente há um vazio na minha mente..."
+      "Você lembra o que fazia antes de vir para o lixão?":
+            jump explicacao_parou_lixao
+      "Pelo, menos você está bem...acho que isso é o mais importante":   
+            g "Obrigada."
+            jump explicacao_parou_lixao
+
+label explicacao_parou_lixao:
+   g "Estávamos ralizando uma missão..."
+   g "A guangue do norte apareceu de repente"
+   g "Vários foram aniquilados"
+   menu:
+      g "Algo acertou com muita força minha cabeça, pensei que houvesse arrancado"
+      "Nesse momento talvez a célula de energia desprendeu de você":
+        g "Provavelmente minha perda de memória, seja por conta disso"
+        jump preciso_ir
+      "Acho que você deve repousar":
+        g "Descanso, é um privilégio que não tenho"      
+        jump preciso_ir
+
+label preciso_ir:
+   g "Preciso ir, encontrar o resto da minha equipe é essencial"
+   "Espere! Você não está completamente carregada, e o plasma precisa de um período de..."
+   g "As nanocélulas vão dar um jeito...Obrigada novamente, talvez nem todos os humanos sejam detestáveis."
+   n "E ela parte, sob a lua cinzenta, pelo menos o agradecimento fora genuíno"
+   jump volta_para_casa
+
+label volta_para_casa:   
 
 label game_over:
     n "FIM"

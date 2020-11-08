@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 208: expected statement.
-    energia = 0
-            ^
-
-File "game/script.rpy", line 209: expected statement.
-    nivelPrensa = 0
-                ^
-
-File "game/script.rpy", line 210: expected statement.
-    scanner = 0
-            ^
-
-File "game/script.rpy", line 211: expected statement.
-    cavar = 0
-          ^
+File "game/script.rpy", line 310: end of line expected.
+    n "Pega uma arma do velho no armário":
+                                         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Oct 21 18:58:45 2020
+Thu Oct 22 14:33:10 2020
