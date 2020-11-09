@@ -22,43 +22,44 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    # scene bg room
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
-
-    # These display lines of dialogue.
-    #$ resultado = dado(3) 
-    #if resultado>=3:
-    #   n "Opa deu maior"
-    #else:
-    #   n "Talvez seja melhor na proxima"
-
-   # jump i_lixao_03_A
+    # show eileen happy
 
 label prologo:
     n "Zarkan a cidade comum."
+    scene bg prologo1
     n "Quando TombCity, a antiga capital, ergueu-se da última vez contra todas as outras cidades"
     n "Homem e máquina já avançavam juntos, a robótica trouxe aprimoramentos, e os aprimoramentos trouxeram a ganância"
+    scene bg prologo2
     n "A ganância trouxe a GUERRA"
     n "Todas as outras cidades entraram em conflito com TombCity."
     n "Menor, porém com um exército poderoso, sua forma de agir era : chegar e destruir. "
+    scene bg prologo3
     n "Mas dessa vez não foi assim...as cidades sofreram, mas TombCity caiu junto"
+    scene bg prologo4
     n "O Clero e os nobres se reuniram e decidiram formam um novo governo, um governo justo, um governo comum"
     n "Nasce a grande cidade de Zarkan."
 
 label a_perda:
+    scene bg prologo5
     n "Zarkan a cidade da tecnologia e da divisão"
+    scene bg prologo6
     n "Robôs e Homens, desde a guerra, dentro de Zarkan, tornaram-se aliados"
     n "Não mais existia a servidão dos robôs, então os velhos hábitos do poderio voltaram: a servidão dos homens"
     n "Zarkan foi dividida em castas: "
+    scene bg prologo_perifericos
     n "Periféricos: onde está a maioria da população, pobres, sem identifidade e recursos para o aprimoramento"
     n "a mercê dos ricos e poderosos e das gangues dominantes"
+    scene bg prologo_barramento
     n "Barramento: são as zonas de conflito. As divisões geraram os bairros da nova metrópole, e seu setor de controle são fixados nos Barramentos, zonas de guerra antigas ainda úteis, usadas para desova do poder controlador, das gangues de aprimoramentos."
+    scene bg prologo_processamento
     n "Processamento: é a divisão de trabalho onde poderosos nobres vivem e são servidos pelos periféricos e pelos próprios nobres. Os nobres exercem poder sobre as gangues, encaracendo o preço dos produtos ou usando da violência para fazer parte de uma casta"
+    scene bg prologo_unidade_central
     n "A Unidade Central é o lar dos intocáveis. Pessoas com alto aprimoramento. Robôs tão importantes que são considerados humanos. Nenhum periférico conseguiu chegar a Unidade Central."
 
 label inicio:
@@ -74,9 +75,13 @@ label inicio:
           $ playerName = "Tijolo"
     n "Nome escolhido: [playerName]"
     m "Hora de acordar!"
+
+    scene bg quarto_protagonista
+
     n "A mãe de [playerName] abre a janela mostrando o sol envolto em nuvens negras da queima de lixo tóxico"
     m "Seu amigo Chest está lá em cima"
     m "É melhor se apressar senão ele vai devorar todo o café-da-manhã"
+    scene bg casa_protagonista
     c "E aí meu irmão? "
     menu:
        c "Pronto para o segundo dia de trabalho na Shopping Encantado?"
@@ -101,6 +106,7 @@ label inicio:
     jump caminho_secao_lixao
 
 label caminho_secao_lixao:
+    scene bg ponte_dia
     menu: 
        "Ei cara, lembrei de uma parada que tenho que fazer..."
        "Sua namorada de novo?...A mulher tá pegando no seu pé!":
@@ -125,6 +131,7 @@ label caminho_secao_lixao:
 
 label lixao:
       
+   scene bg trabalho_visao1
    ve "Ei meu bom rapaz! Chegou cedo!"
    ve "Você tem duas opções, ou começa por aqui! Tem muito material eletrônico"
    ve "Ou vai lá na parte nordeste..."
@@ -257,6 +264,7 @@ label lixao_03_A:
    return        
    
 label lixao_03_B:
+   scene bg trabalho_lado_leste_morro
    n "Caminhando em meio aos escombros e lixo eletrônico, eis que [playerName] vê uma garota"
    n "Estava deitada, o corpo surrado"
    n "Tinha um braço robótico"
@@ -264,6 +272,7 @@ label lixao_03_B:
    n "As perguntas iam e voltavam na cabeça de [playerName], mas uma coisa era certa: ele tinha que tira-la dali..."
    n "Seu corpo era leve como uma mulher normal mas era frio como metal, no entanto sentia seu coração bater"
    "O velho saiu, vou levá-la ao escritório"
+   scene bg escritorio_lixao_1
    n "Decidido a ajudá-la, procura entre os caixas um kit de primeiros socorros"
    n "Mas ela ainda estava imóvel, fria e de olhos fechados"
    n "Lembra-se que alguns cyborgs do tempo de TombCity eram humanos mas guiados por tecnologia militar de sorte que precisavam de células de combustível"
@@ -271,6 +280,7 @@ label lixao_03_B:
    n "Entra no cofre do velho e seleciona uma célula que parece ser compatível com a garota"
    n "Mal Termina de adequar a célula na garota e sente uma forte pressão no seu pescoço, e seus pés não estávam no chão"
    n "Fora arremessado contra a parede como se fosse uma lata de cerveja. Sentiu que algo quebrou."
+   scene bg escritorio_lixao_porrada_garota_1
    n "O mórbida garota estava agora a sua frente apontando uma adaga cintilante de uma chama verde que saía de seu braço robótico"
    n "E apontava com para seu rosto, perguntou:"
    menu:
@@ -288,6 +298,7 @@ label lixao_03_B:
             jump lixao_03_B_1
 
 label lixao_03_B_1:
+   scene bg escritorio_lixao_garota_perso_levantando
    menu:
        g "Como será que vim parar aqui?"
        "Quer ver você é uma vadia, te deram um sacode e ...":
@@ -309,17 +320,20 @@ label lixao_03_B_2:
    menu:
        n "Está certa...tome isso pra você - fala [playerName] enquanto coloca a mão no armário procurando alguma coisa"
        "Pegar uma arma do velho no armário":
+          scene bg escritorio_lixao_garota_perso_arma_armario
           n "Rapidamente ela desvia da tentativa de tiro, e a adaga verde está no coração de [playerName]"
           jump game_over
        "Pegar um lenço, para ela limpar sua própria sujeira":     
           n "Ela dá um forte golpe em [playerName] e ele bate a cabeça contra um prego"
           jump game_over
        "Pegar um cilindro azul, ela precisa repor seu plasma":        
+          scene bg escritorio_lixao_garota_perso_saco_plasma
           "Precisa repor o seu plasma"
           n "Ela muda sua feição, e aceita o plasma"  
           jump lixao_03_B_3
 
 label lixao_03_B_3:
+   scene bg escritorio_lixao_garota_perso_saco_plasma_aplicar
    n "A garota permite que [playerName] auxilie-a na aplicação do plasma "
    menu:
       g "Realmente há um vazio na minha mente..."
@@ -330,8 +344,9 @@ label lixao_03_B_3:
             jump explicacao_parou_lixao
 
 label explicacao_parou_lixao:
+   scene bg escritorio_lixao_garota_lembranca_1
    g "Estávamos ralizando uma missão..."
-   g "A guangue do norte apareceu de repente"
+   g "A gangue do norte apareceu de repente"
    g "Vários foram aniquilados"
    menu:
       g "Algo acertou com muita força minha cabeça, pensei que houvesse arrancado"
@@ -343,6 +358,7 @@ label explicacao_parou_lixao:
         jump preciso_ir
 
 label preciso_ir:
+   scene bg escritorio_lixao_garota_lembranca_2
    g "Preciso ir, encontrar o resto da minha equipe é essencial"
    "Espere! Você não está completamente carregada, e o plasma precisa de um período de..."
    g "As nanocélulas vão dar um jeito...Obrigada novamente, talvez nem todos os humanos sejam detestáveis."
@@ -350,8 +366,11 @@ label preciso_ir:
    jump volta_para_casa
 
 label volta_para_casa:   
-
+    scene bg ponte_noite
+    with fade
+    
 label game_over:
+    scene bg game_over_vermelho
     n "FIM"
 
 label final:
