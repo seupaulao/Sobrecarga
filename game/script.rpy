@@ -216,14 +216,19 @@ label lixao_03_A:
    while meta > 0:
        menu:
          "O que devo fazer?"
+         scene bg compactador_off
          "Compactador de lixo":
             if nivelPrensa < 100:
+               scene bg compactador_registro_nivel_off
                "A prensa só funciona 100 por cento preenchida, e seu nivel eh : [nivelPrensa]"
             elif scanner <= 0:
+               scene bg compactador_registro_scanner_off
                "Tenho que passar o scanner. Segurança em primeiro lugar!"
             elif energia <= 0:
+               scene bg compactador_registro_energia_off
                "Sem energia, não ligo a prensa"
             else:
+               scene bg compactador_on
                $ meta = meta - 1
                "Falta só [meta] para acabar"
                $ energia = 0
@@ -232,7 +237,9 @@ label lixao_03_A:
                $ cavar = 0
             jump lixao_03_A   
          "Recarregador de Energia":
+            scene bg alavanca_energia_off
             "Colocando força primeiro"
+            scene bg alavanca_energia_on
             $ energia = 1
             jump lixao_03_A
          "Adicionar Lixo na prensa":
@@ -240,22 +247,28 @@ label lixao_03_A:
                 "Nao preciso colocar mais nada na prensa porque está em 100 por cento!"
             else:
                 if cavar <= 0:
+                   scene bg mostrar_entulho
                    "Preciso cavar primeiro"
                 else:
                    "Colocando na prensa"
+                   scene bg entulho_na_prensa
                    $ nivelPrensa = nivelPrensa + 20
                    $ cavar = 0
             jump lixao_03_A
          "Cavar Lixo":
+            scene bg cavar_entulho
             "Cavando e Cavando..."
             $ resultado = dado(3)
             if resultado > 2:
+               scene bg celula_encontrada
                "Achei!"
                $ celulas = celulas + 1
             $ cavar = 1
             jump lixao_03_A
          "Scanner Nuclear":
+            scene bg scanner_off
             "Acionando scannner"
+            scene bg scanner_on
             $ scanner = 1
             jump lixao_03_A
          "Ir a ala leste":
@@ -366,11 +379,30 @@ label preciso_ir:
    jump volta_para_casa
 
 label volta_para_casa:   
-    scene bg ponte_noite
-    with fade
+   scene bg fechando_escritorio
+   with fade
+   n "[playerName] conserta os móveis do escritório do patrão"
+   n "Verifica o plasma e as células de baterias usadas"
+   n "Bate o cartão de ponto"
+   n "E sai pensando na garota que por um momento poderia ceifar sua vida ou poderia ser mais gentil e agradecer não ter sido transformada em lixo compactado"
+   "Quem é ela? Será ela uma mercenária? Pertence a outra gangue rival?"
+   "Será ela uma revolucionária?"
+   n "Milhares de pensamentos iam e vinham para sua cabeça, procurando sanar a dúvida:"
+   n "Seria aquela garota realmente confiável? Poderia reve-la?"
+   scene bg ponte_noite
+   with fade
+   n "Caminhava pensando, no caminho reparou uma certa calmaria..."
+   "Estranho? Não houve feira hoje? Porque?"
+   n "o comércio local estava fechado"
+   n "As pessoas que apareciam na rua, ao avistarem outras saiam correndo para o outro lado"
+   n "Um vazio no peito toma [playerName]"
+   n "Suspeitando de que algo está errado corre para casa"
+   jump casa_destruida_1
     
+label casa_destruida_1:
+
 label game_over:
-    scene bg game_over_vermelho
+    scene bg game_over
     n "FIM"
 
 label final:
